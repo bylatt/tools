@@ -41,7 +41,7 @@ export default function B64Decode() {
         onChange={onInputChange}
       />
       <button
-        className="bg-gray-300 p-2 font-semibold text-gray-800 w-36 hover:bg-gray-400"
+        className="bg-gray-300 p-2 font-semibold text-gray-800 hover:bg-gray-400"
         onClick={onDecode}
         type="button"
       >
@@ -59,7 +59,7 @@ export default function B64Decode() {
       </div>
       <button
         className={cn(
-          'bg-gray-300 p-2 font-semibold text-gray-800 w-48 hover:bg-gray-400',
+          'bg-gray-300 p-2 font-semibold text-gray-800 hover:bg-gray-400',
           {
             hidden: !output,
           },
