@@ -1,12 +1,22 @@
-import React, { useState } from 'react'
-import { useCopyToClipboard } from 'react-use'
+import {
+  useCopyToClipboard,
+  useDocumentTitle,
+  useLocalStorage,
+} from '@uidotdev/usehooks'
+import React from 'react'
 import { toB64 } from '../utils/base64'
 import { cn } from '../utils/cn'
 
 export default function B64Encode() {
-  const [input, setInput] = useState('')
-  const [output, setOutput] = useState('')
-  const [copyState, copyToClipboard] = useCopyToClipboard()
+  useDocumentTitle('Base64 Encode | Tools')
+  const [input, setInput] = useLocalStorage('b64-encode-input', '')
+  const [output, setOutput] = useLocalStorage('b64-encode-output', '')
+  const [_, copyToClipboard] = useCopyToClipboard()
+
+  function onInputChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
+    e.preventDefault()
+    setInput(e.target.value)
+  }
 
   function onEncode(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault()
@@ -16,9 +26,6 @@ export default function B64Encode() {
   function onCopy(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault()
     copyToClipboard(output)
-    if (copyState.error) {
-      return
-    }
   }
 
   return (
@@ -31,7 +38,7 @@ export default function B64Encode() {
         rows={10}
         placeholder="Paste your text here..."
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={onInputChange}
       />
       <button
         className="bg-gray-300 p-2 font-semibold text-gray-800 w-36 hover:bg-gray-400"
