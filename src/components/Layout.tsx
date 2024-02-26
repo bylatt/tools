@@ -1,5 +1,4 @@
 import { Outlet } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import React from 'react'
 import Nav from './Nav'
 
@@ -9,7 +8,6 @@ export default function Layout() {
       <Nav />
       <hr />
       <Outlet />
-      <TanStackRouterDevtools />
     </div>
   )
 }

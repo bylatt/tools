@@ -6,26 +6,26 @@
   "scripts": {
     "dev": "npx parcel ./src/index.html",
     "format": "npx biome format --write ./*/**{.ts,.tsx,.js,.jsx,.json}",
-    "clean": "npx rimraf dist && npx rimraf .parcel-cache"
+    "clean": "npx rimraf dist && npx rimraf .parcel-cache",
+    "build": "npx parcel build ./src/index.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@tanstack/react-router": "^1.17.4",
-    "@types/node": "^20.11.20",
-    "parcel": "^2.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-use": "^17.5.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.5.3",
-    "@tanstack/router-devtools": "^1.17.4",
+    "@types/node": "^20.11.20",
     "@types/react": "^18.2.58",
     "@types/react-dom": "^18.2.19",
     "buffer": "^6.0.3",
     "clsx": "^2.1.0",
+    "parcel": "^2.11.0",
     "postcss": "^8.4.35",
     "process": "^0.11.10",
     "rimraf": "^5.0.5",
