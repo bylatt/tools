@@ -97,7 +97,7 @@ export default function JSONEditor() {
       />
       {error && (
         <span className="bg-red-500 text-md w-[100%] text-white p-2">
-          !!! JSON parse error: {error}
+          !!! Error: {error}
         </span>
       )}
     </div>
