@@ -16,6 +16,9 @@ export default function Home() {
         <li>
           <Link to="/base64-decode">Base64 Decode</Link>
         </li>
+        <li>
+          <Link to="/json-editor">JSON Editor</Link>
+        </li>
       </ul>
     </div>
   )
