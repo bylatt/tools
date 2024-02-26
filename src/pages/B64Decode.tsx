@@ -8,7 +8,7 @@ import { fromB64 } from '../utils/base64'
 import { cn } from '../utils/cn'
 
 export default function B64Decode() {
-  useDocumentTitle('Base64 Decode')
+  useDocumentTitle('Base64 Decode | Tools')
   const [input, setInput] = useLocalStorage('b64-decode-input', '')
   const [output, setOutput] = useLocalStorage('b64-decode-output', '')
   const [_, copyToClipboard] = useCopyToClipboard()

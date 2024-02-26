@@ -1,8 +1,11 @@
 import { Link } from '@tanstack/react-router'
+import { useDocumentTitle } from '@uidotdev/usehooks'
 import React from 'react'
 import { getRandomEmoji } from '../utils/emoji'
 
 export default function Home() {
+  useDocumentTitle('Tools')
+
   return (
     <div className="py-2">
       <h1 className="text-8xl py-4">{getRandomEmoji()}</h1>
