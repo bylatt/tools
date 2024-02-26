@@ -19,6 +19,10 @@ export default function JSONEditor() {
   const onChange = useCallback(
     (value: string, _) => {
       setInput(value)
+      if (!value) {
+        setError('')
+        return
+      }
       const { error } = validateJSON(value)
       if (error) {
         setError(error)
