@@ -2,7 +2,6 @@
   "name": "tools",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "npx parcel ./src/index.html",
     "format": "npx biome format --write ./*/**{.ts,.tsx,.js,.jsx,.json}",
@@ -14,9 +13,11 @@
   "license": "ISC",
   "dependencies": {
     "@tanstack/react-router": "^1.17.4",
+    "clsx": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-use": "^17.5.0"
+    "react-use": "^17.5.0",
+    "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.5.3",
@@ -24,12 +25,10 @@
     "@types/react": "^18.2.58",
     "@types/react-dom": "^18.2.19",
     "buffer": "^6.0.3",
-    "clsx": "^2.1.0",
     "parcel": "^2.11.0",
     "postcss": "^8.4.35",
     "process": "^0.11.10",
     "rimraf": "^5.0.5",
-    "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.1"
   },
   "postcss": {
