@@ -11,6 +11,7 @@ import './index.css'
 import B64Decode from './pages/B64Decode'
 import B64Encode from './pages/B64Encode'
 import Home from './pages/Home'
+import JSONEditor from './pages/JSONEditor'
 
 const rootRoute = createRootRoute({
   component: () => <Layout />,
@@ -34,10 +35,17 @@ const b64DecodeRoute = createRoute({
   component: () => <B64Decode />,
 })
 
+const jsonEditorRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/json-editor',
+  component: () => <JSONEditor />,
+})
+
 const routeTree = rootRoute.addChildren([
   indexRoute,
   b64EncodeRoute,
   b64DecodeRoute,
+  jsonEditorRoute,
 ])
 
 const router = createRouter({ routeTree, defaultPreload: 'intent' })

@@ -4,7 +4,11 @@
 
 @layer base {
   * {
-    @apply text-gray-400 bg-black transition-all ease-in-out duration-300 rounded-md outline-none;
+    @apply text-gray-400 bg-black transition-all ease-in-out duration-300 rounded-sm outline-none;
+  }
+
+  [class*="cm-"], [class*="cm-"] * {
+    @apply transition-none rounded-none bg-transparent;
   }
 
   a {
