@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "npx parcel ./src/index.html",
-    "format": "npx biome format --write ./*/**{.ts,.tsx,.js,.jsx,.json}",
+    "format": "npx prettier --write --ignore-unknown .",
     "clean": "npx rimraf dist && npx rimraf .parcel-cache",
     "build": "npx parcel build ./src/index.html"
   },
@@ -18,18 +18,18 @@
     "@uiw/codemirror-theme-github": "^4.21.24",
     "@uiw/react-codemirror": "^4.21.24",
     "clsx": "^2.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.5.3",
     "@types/node": "^20.11.20",
     "@types/react": "^18.2.58",
     "@types/react-dom": "^18.2.19",
     "buffer": "^6.0.3",
     "parcel": "^2.11.0",
     "postcss": "^8.4.35",
+    "prettier": "^3.2.5",
     "process": "^0.11.10",
     "rimraf": "^5.0.5",
     "tailwindcss": "^3.4.1"
@@ -38,5 +38,11 @@
     "plugins": {
       "tailwindcss": {}
     }
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
   }
 }

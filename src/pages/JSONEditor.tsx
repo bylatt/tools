@@ -30,7 +30,7 @@ export default function JSONEditor() {
         setError('')
       }
     },
-    [setInput],
+    [setInput]
   )
 
   function onBeautify(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
@@ -91,7 +91,7 @@ export default function JSONEditor() {
         </ul>
       </div>
       <ReactCodeMirror
-        className="border-gray-400 border-2 border-dashed w-[100%] my-4 rounded-sm"
+        className="border-gray-400 border-2 border-dashed w-[100%] my-4 rounded-sm font-mono"
         height="640px"
         lang="json"
         extensions={[json()]}

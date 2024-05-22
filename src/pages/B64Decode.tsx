@@ -49,10 +49,10 @@ export default function B64Decode() {
       </button>
       <div
         className={cn(
-          'w-[100%] text-white p-2 my-4 font-mono h-40 border-2 border-dashed border-gray-400',
+          'w-[100%] text-white p-2 my-4 font-mono min-h-40 border-2 border-dashed border-gray-400',
           {
             hidden: !output,
-          },
+          }
         )}
       >
         {output}
@@ -62,7 +62,7 @@ export default function B64Decode() {
           'bg-gray-300 p-2 font-semibold text-gray-800 hover:bg-gray-400',
           {
             hidden: !output,
-          },
+          }
         )}
         type="button"
         onClick={onCopy}
