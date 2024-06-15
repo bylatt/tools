@@ -10,6 +10,7 @@ export default function Nav() {
           ['Base64 Encode', '/base64-encode'],
           ['Base64 Decode', '/base64-decode'],
           ['JSON Editor', '/json-editor'],
+          ['UUID Generator', '/uuid'],
         ].map(([title, to]) => (
           <li className="py-2 mx-4 first:ml-0 last:mr-0" key={title}>
             <Link

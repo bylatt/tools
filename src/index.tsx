@@ -12,6 +12,7 @@ import B64Decode from './pages/B64Decode'
 import B64Encode from './pages/B64Encode'
 import Home from './pages/Home'
 import JSONEditor from './pages/JSONEditor'
+import UUID from './pages/UUID'
 
 const rootRoute = createRootRoute({
   component: () => <Layout />,
@@ -41,11 +42,18 @@ const jsonEditorRoute = createRoute({
   component: () => <JSONEditor />,
 })
 
+const uuidRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/uuid',
+  component: () => <UUID />,
+})
+
 const routeTree = rootRoute.addChildren([
   indexRoute,
   b64EncodeRoute,
   b64DecodeRoute,
   jsonEditorRoute,
+  uuidRoute,
 ])
 
 const router = createRouter({ routeTree, defaultPreload: 'intent' })

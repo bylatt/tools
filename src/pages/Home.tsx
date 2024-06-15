@@ -17,6 +17,9 @@ export default function Home() {
         <li>
           <Link to="/json-editor">JSON Editor</Link>
         </li>
+        <li>
+          <Link to="/uuid">UUID Generator</Link>
+        </li>
       </ul>
     </div>
   )
