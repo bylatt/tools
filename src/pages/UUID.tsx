@@ -1,16 +1,21 @@
-import {
-  useCopyToClipboard,
-  useDocumentTitle,
-  useLocalStorage,
-} from '@uidotdev/usehooks'
-import React from 'react'
+import { useSearch } from '@tanstack/react-router'
+import { useCopyToClipboard, useDocumentTitle } from '@uidotdev/usehooks'
+import React, { useState } from 'react'
 import { cn } from '../utils/cn'
-import { GenUUID as genUUID } from '../utils/uuid'
+import { genUUID } from '../utils/uuid'
 
 export default function B64Decode() {
   useDocumentTitle('UUID | Tools')
-  const [version, setVersion] = useLocalStorage('uuid-version', 'v7')
-  const [output, setOutput] = useLocalStorage('b64-decode-output', '')
+  const versionKey = 'uuid-version'
+  const { v: versionFromQuery } = useSearch({ strict: false })
+  const versionFromStorage = localStorage.getItem(versionKey)
+  if (versionFromQuery) {
+    localStorage.setItem(versionKey, `v${versionFromQuery}`)
+  }
+  const [version, setVersion] = useState(
+    versionFromQuery ? `v${versionFromQuery}` : versionFromStorage || 'v4'
+  )
+  const [output, setOutput] = useState('')
   const [_, copyToClipboard] = useCopyToClipboard()
 
   function onCopy(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
@@ -19,6 +24,7 @@ export default function B64Decode() {
   }
 
   function onVersionChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    localStorage.setItem(versionKey, e.target.value)
     setVersion(e.target.value)
   }
 
@@ -39,9 +45,10 @@ export default function B64Decode() {
         name="Generate UUID"
         className="w-1/6 text-white p-2 my-4 font-mono border-2 border-dashed border-gray-400 bg-transparent appearance-none block"
         onChange={onVersionChange}
+        value={version}
       >
         {versions.map((option) => (
-          <option key={option} value={option} selected={version === option}>
+          <option key={option} value={option}>
             {option}
           </option>
         ))}

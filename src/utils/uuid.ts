@@ -1,6 +1,6 @@
 import * as uuid from 'uuid'
 
-export function GenUUID(version: string): string {
+export function genUUID(version: string): string {
   switch (version) {
     case 'v1':
       return uuid.v1()
